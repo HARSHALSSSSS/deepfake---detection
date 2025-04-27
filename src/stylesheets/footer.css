@@ -1,0 +1,30 @@
+.footer {
+  font-family: Be Vietnam Pro;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25.3px;
+  letter-spacing: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0px;
+  margin-top: 100px;
+}
+
+.footer-line {
+  margin-bottom: 30px;
+  width: 80vw;
+  border: 0.5px solid black;
+}
+
+.privacy-policy-url{
+  text-decoration: none;
+  color: rgb(92, 88, 88);
+  transition: all 0.5s;
+  margin-left: 30px;
+}
+
+.privacy-policy-url:hover{
+  color: black;
+}

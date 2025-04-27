@@ -1,0 +1,136 @@
+.upload-page-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-page {
+  min-height: 55vh;
+  margin-top: 50px;
+  margin-bottom: -50px;
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-page-title {
+  font-family: Istok Web;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 46.06px;
+  letter-spacing: 10%;
+}
+
+.upload-page-sub-title {
+  font-family: Istok Web;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28.79px;
+  letter-spacing: 10%;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 2px dashed black;
+    border-radius: 20px;
+    padding: 10px 30px;
+    width: 500px;
+    background-color: #d3d3d3;
+}
+
+.url-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #666;
+    color: black;
+    outline: none;
+}
+
+.file-upload {
+    display: none;
+}
+
+.upload-icon {
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+
+
+/* File Name Styling */
+.file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Results Table Styling */
+.results-container {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.results-table th {
+  background-color: #76c7c0;
+  color: white;
+  font-weight: bold;
+}
+
+.results-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #ff0000;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Progress Bar Styling */
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #76c7c0;
+  border-radius: 5px;
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}

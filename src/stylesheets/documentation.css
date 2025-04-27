@@ -1,0 +1,70 @@
+.documentation-button-and-details {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10vh;
+}
+
+.documentation-buttons {
+  height: 10vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.documentation{
+    min-height: 90vh;
+    width: 90vw;
+}
+
+h2{
+    font-size: 40px;
+    margin: 50px 0px;
+}
+
+.doc-sub-title{
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.doc-sub-details{
+    font-size: 20px;
+    margin: 15px 0px;
+    color: rgb(92, 88, 88);
+}
+
+.doc-list{
+  margin-top: 30px;
+  padding-left: 25px;
+}
+
+.doc-list-items{
+  font-size: 20px;
+  line-height: 50px;
+  color: rgb(92, 88, 88);
+}
+
+.doc-list-items > span{
+  color: black;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.doc-list-container, .doc-para-container{
+  margin-top: 60px;
+}
+
+.documentation-buttons-pointer{
+  cursor: pointer;
+  color: rgb(92, 88, 88);
+  transition: all 0.5s;
+}
+
+.documentation-buttons-pointer:hover{
+  color: black;
+  scale: 1.25;
+}
