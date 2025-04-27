@@ -14,7 +14,7 @@ const Upload = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const socket = io("http://103.80.163.237:5051");
+    const socket = io("/", { path: "/socket.io" }); // ✅ Correct: Proxy through Vercel
 
     socket.on("progress_update", (data) => {
       console.log("⬆️ Progress received:", data.progress);
@@ -22,7 +22,7 @@ const Upload = () => {
       setProcessing(true);
     });
 
-    return () => socket.disconnect();
+    return () => socket.disconnect(); // Clean up socket connection
   }, []);
 
   const handleFileChange = (e) => {
@@ -30,7 +30,6 @@ const Upload = () => {
     setFile(selectedFile);
     setFileName(selectedFile.name);
 
-    // 🔥 Reset everything from the previous upload
     setResult(null);
     setError(null);
     setProgress(0);
@@ -51,10 +50,10 @@ const Upload = () => {
     setUploading(true);
     setError(null);
     setProgress(0);
-    setResult(null); // ✅ Clear previous result on new upload
+    setResult(null);
 
     try {
-      const response = await fetch("http://103.80.163.237:5051/predict", {
+      const response = await fetch("/api/predict", {
         method: "POST",
         body: formData,
       });
@@ -70,7 +69,7 @@ const Upload = () => {
       setError("Error uploading file. Please try again.");
     } finally {
       setUploading(false);
-      setProcessing(false); // ✅ Reset processing status
+      setProcessing(false);
     }
   };
 
@@ -144,7 +143,6 @@ const Upload = () => {
               Fake clips detected: {result.fake_clip_count}
             </p>
 
-            {/* ✅ New Averages */}
             <p style={{ marginTop: "10px" }}>
               <strong>Average Lips Manipulation:</strong> {result.avg_lips}%
             </p>
@@ -173,12 +171,11 @@ const Upload = () => {
               </table>
             )}
 
-            {/* 🔥 New Video Player Section */}
             {result.video_path && (
               <div className="video-player-container" style={{ marginTop: "20px" }}>
                 <h3>Uploaded Video:</h3>
                 <video
-                  src={`http://103.80.163.237:5051/uploads/${result.video_path.split("/").pop()}`}
+                  src={`/uploads/${result.video_path.split("/").pop()}`} // ✅ Correct proxy video URL
                   controls
                   style={{ width: "100%", maxWidth: "720px", borderRadius: "10px" }}
                 ></video>
