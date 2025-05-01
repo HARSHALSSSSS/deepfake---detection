@@ -14,7 +14,7 @@ const Upload = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const socket = io("https://103.80.163.237:5051");
+    const socket = io("https://103.80.163.237");
 
     socket.on("progress_update", (data) => {
       console.log("⬆️ Progress received:", data.progress);
@@ -54,7 +54,7 @@ const Upload = () => {
     setResult(null); // ✅ Clear previous result on new upload
 
     try {
-      const response = await fetch("https://103.80.163.237:5051/predict", {
+      const response = await fetch("https://103.80.163.237/predict", {
         method: "POST",
         body: formData,
       });
@@ -178,7 +178,7 @@ const Upload = () => {
               <div className="video-player-container" style={{ marginTop: "20px" }}>
                 <h3>Uploaded Video:</h3>
                 <video
-                  src={`https://103.80.163.237:5051/uploads/${result.video_path.split("/").pop()}`}
+                  src={`https://103.80.163.237/uploads/${result.video_path.split("/").pop()}`}
                   controls
                   style={{ width: "100%", maxWidth: "720px", borderRadius: "10px" }}
                 ></video>
